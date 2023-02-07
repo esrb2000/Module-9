@@ -7,8 +7,15 @@ public class SplitText {
   }
 
   public static String splitTextIntoWords(String text) {
-    //TODO реализуйте метод
-    return "";
+    String clearedText = text.strip();
+    String regex = "[0-9.,:;]";
+    clearedText = clearedText.replaceAll(regex, "");
+    String [] words = clearedText.split("\s+");
+    String splitText = "";
+    for (int i = 0; i < words.length; ++i) {
+      words[i] = words[i] + '\n';
+      splitText = splitText + words[i];
+    }
+    return splitText;
   }
-
 }
