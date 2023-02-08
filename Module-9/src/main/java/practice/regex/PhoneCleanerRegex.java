@@ -17,10 +17,7 @@ public class PhoneCleanerRegex {
       input = input.replaceAll(regex, "");
       String[] number = input.split("");
       String outputNumber = "";
-
-      if (number.length > 11) {
-        System.out.println("Неверный формат номера");
-      } else if (number.length < 10) {
+      if (number.length > 11 || number.length < 10) {
         System.out.println("Неверный формат номера");
       } else if ( number.length == 10) {
         outputNumber = outputNumber + "7";
